@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:memes_mood/components/custom_appbar.dart';
 import 'package:memes_mood/components/decoration.dart';
 import 'package:memes_mood/model/model.dart';
 
-class YourMood extends StatelessWidget with Memes{
+class YourMood extends StatelessWidget with Memes {
   final String imageName;
 
   YourMood(
@@ -12,11 +13,11 @@ class YourMood extends StatelessWidget with Memes{
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
-
+    
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Nome do personagem'),
+      appBar: customAppBar(
+        context,
+        imageName,
       ),
       body: Container(
         height: height,
@@ -41,7 +42,9 @@ class YourMood extends StatelessWidget with Memes{
                     Center(
                       child: Padding(
                         padding: const EdgeInsets.only(top: 280),
-                        child: Text(description(imageName)),
+                        child: Text(
+                          description(imageName),
+                        ),
                       ),
                     ),
                   ],

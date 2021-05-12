@@ -1,5 +1,5 @@
 mixin Memes{
-  final memesMap = {
+  final _memesMap = {
     '1' : 'MEME',
     '2' : 'MEME',
     '3' : 'MEME',
@@ -27,5 +27,5 @@ mixin Memes{
     '25' : 'MEME',
   };
 
-  String description(String imageName) => memesMap[imageName];
+  String description(String imageName) => _memesMap[imageName];
 }

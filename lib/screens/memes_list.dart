@@ -11,9 +11,13 @@ class MemesList extends StatelessWidget {
         children: [
           Expanded(
             flex: 1,
-            child: Text(
-              'De 1 até 25, como você se sente hoje?',
-              style: TextStyle(),
+            child: Center(
+              child: Text(
+                'From 1 to 25, how do you feel today?',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
             ),
           ),
           Expanded(
@@ -42,7 +46,7 @@ class MemesList extends StatelessWidget {
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => YourMood('$index'),
+                          builder: (context) => YourMood(imageName: '$index', details: 'ddd'),
                         ),
                       ),
                     ),

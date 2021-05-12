@@ -5,11 +5,14 @@ import 'package:memes_mood/screens/your_mood.dart';
 class MemesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: customAppBar(context, 'Meme Mood'),
       body: Column(
         children: [
-          Center(
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
             child: Text(
               'From 1 to 25, how do you feel today?',
               style: TextStyle(
@@ -17,7 +20,9 @@ class MemesList extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 30,),
+          SizedBox(
+            height: height * 0.03,
+          ),
           Expanded(
             flex: 10,
             child: GridView.builder(

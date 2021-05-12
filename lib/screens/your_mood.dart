@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:memes_mood/components/decoration.dart';
+import 'package:memes_mood/model/model.dart';
 
-class YourMood extends StatelessWidget {
-  const YourMood({Key key}) : super(key: key);
+class YourMood extends StatelessWidget with Memes{
+  final String imageName;
+
+  YourMood(
+    this.imageName,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +33,7 @@ class YourMood extends StatelessWidget {
                         image: DecorationImage(
                           scale: 0.6,
                           image: AssetImage(
-                            'assets/25.png',
+                            'assets/$imageName.png',
                           ),
                         ),
                       ),
@@ -36,7 +41,7 @@ class YourMood extends StatelessWidget {
                     Center(
                       child: Padding(
                         padding: const EdgeInsets.only(top: 280),
-                        child: Text('ddddd'),
+                        child: Text(description(imageName)),
                       ),
                     ),
                   ],

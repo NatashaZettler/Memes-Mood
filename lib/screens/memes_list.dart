@@ -72,15 +72,16 @@ class MemesList extends StatelessWidget {
                       alignment: Alignment.bottomRight,
                     ),
                     child: GestureDetector(
-                        child: Image.asset(
-                          'assets/$index.png',
+                      child: Image.asset(
+                        'assets/$index.png',
+                      ),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => YourMood('$index'),
                         ),
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => YourMood(),
-                          ),
-                        )),
+                      ),
+                    ),
                   ),
                 );
               },

@@ -17,12 +17,6 @@ class Memes extends StatelessWidget {
   }
 }
 
-
-
-
-
-
-
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key key}) : super(key: key);
 

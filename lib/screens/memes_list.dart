@@ -9,17 +9,15 @@ class MemesList extends StatelessWidget {
       appBar: customAppBar(context, 'Meme Mood'),
       body: Column(
         children: [
-          Expanded(
-            flex: 1,
-            child: Center(
-              child: Text(
-                'From 1 to 25, how do you feel today?',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
+          Center(
+            child: Text(
+              'From 1 to 25, how do you feel today?',
+              style: TextStyle(
+                fontSize: 20,
               ),
             ),
           ),
+          const SizedBox(height: 30,),
           Expanded(
             flex: 10,
             child: GridView.builder(
@@ -41,12 +39,13 @@ class MemesList extends StatelessWidget {
                     ),
                     child: GestureDetector(
                       child: Image.asset(
-                        'assets/$index.png',
+                        'assets/images/$index.png',
                       ),
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => YourMood(imageName: '$index', details: 'ddd'),
+                          builder: (context) =>
+                              YourMood(imageName: '$index', details: 'ddd'),
                         ),
                       ),
                     ),

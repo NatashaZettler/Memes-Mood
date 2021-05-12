@@ -36,7 +36,7 @@ class YourMood extends StatelessWidget with Memes {
                         image: DecorationImage(
                           scale: 0.6,
                           image: AssetImage(
-                            'assets/$imageName.png',
+                            'assets/images/$imageName.png',
                           ),
                         ),
                       ),
@@ -57,14 +57,14 @@ class YourMood extends StatelessWidget with Memes {
               ),
               ElevatedButton(
                   onPressed: () {
-                    addMemeMood('assets/$imageName.png');
+                    addMemeMood('assets/images/$imageName.png');
                     message(context, 'Seu humor foi salvo');
                   },
                   child: Text('É assim que você se sente?'),),
               Text('OU'),
               ElevatedButton(
                   onPressed: () {
-                    addMemeFavorite('assets/$imageName.png');
+                    addMemeFavorite('assets/images/$imageName.png');
                     message(context, 'Seu meme favorito foi salvo');
                   },
                   child: Text('Você só gosta desse MEME?'),),

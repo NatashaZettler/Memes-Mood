@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memes_mood/components/custom_appbar.dart';
+import 'package:memes_mood/screens/memes_favorite_mood.dart';
 import 'package:memes_mood/screens/your_mood.dart';
 
 class MemesList extends StatelessWidget {
@@ -8,7 +9,12 @@ class MemesList extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: customAppBar(context, 'Meme Mood'),
+      appBar: customAppBar(
+        context,
+        'Meme Mood',
+        () => Navigator.push(context, MaterialPageRoute(builder: (context) => MemesFavoriteMood())),
+        () {},
+      ),
       body: Column(
         children: [
           Padding(

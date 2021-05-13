@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memes_mood/components/decoration.dart';
 
-PreferredSize customAppBar(BuildContext context, String title) {
+PreferredSize customAppBar(BuildContext context, String title, Function() favoriteList, Function() moodList,) {
   final height = MediaQuery.of(context).size.height;
   return PreferredSize(
     preferredSize: Size.fromHeight(height),
@@ -11,28 +11,38 @@ PreferredSize customAppBar(BuildContext context, String title) {
       ),
       decoration: decoration(),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 20, bottom: 10),
-            child: IconButton(
-              icon: Icon(
-                Icons.arrow_back_outlined,
-              ),
-              onPressed: () => Navigator.of(context).pop(),
+          IconButton(
+            alignment: Alignment.topCenter,
+            icon: Icon(
+              Icons.arrow_back_outlined,
+            ),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: new TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.w500,
+              color: Colors.white,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 60.0),
-            child: Text(
-              title,
-              textAlign: TextAlign.center,
-              style: new TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
-              ),
+          IconButton(
+            alignment: Alignment.topRight,
+            icon: Icon(
+              Icons.favorite,
             ),
+            onPressed: () => favoriteList(),
           ),
+          IconButton(
+            alignment: Alignment.topRight,
+            icon: Icon(
+              Icons.emoji_emotions_outlined,
+            ),
+            onPressed: () => moodList,
+          )
         ],
       ),
     ),

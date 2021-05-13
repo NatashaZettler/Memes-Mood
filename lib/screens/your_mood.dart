@@ -20,6 +20,8 @@ class YourMood extends StatelessWidget with Memes {
       appBar: customAppBar(
         context,
         name(imageName),
+        () {},
+        () {},
       ),
       body: Container(
         height: height,
@@ -56,18 +58,20 @@ class YourMood extends StatelessWidget with Memes {
                 height: height * 0.09,
               ),
               ElevatedButton(
-                  onPressed: () {
-                    addMemeMood('assets/images/$imageName.png');
-                    message(context, 'Seu humor foi salvo');
-                  },
-                  child: Text('É assim que você se sente?'),),
+                onPressed: () {
+                  addMemeMood('$imageName');
+                  message(context, 'Seu humor foi salvo');
+                },
+                child: Text('É assim que você se sente?'),
+              ),
               Text('OU'),
               ElevatedButton(
-                  onPressed: () {
-                    addMemeFavorite('assets/images/$imageName.png');
-                    message(context, 'Seu meme favorito foi salvo');
-                  },
-                  child: Text('Você só gosta desse MEME?'),),
+                onPressed: () {
+                  addMemeFavorite('$imageName');
+                  message(context, 'Seu meme favorito foi salvo');
+                },
+                child: Text('Você só gosta desse MEME?'),
+              ),
             ],
           ),
         ),

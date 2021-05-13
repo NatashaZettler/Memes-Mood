@@ -28,19 +28,21 @@ mixin Memes{
     '25' : 'Bilious - HATERBD',
   };
 
-  final Set<String> memeMood = {};
-  final Set<String> memeFavorite = {};
-
   String description(String imageName) => _memesMap[imageName].split('-')[1].toString();
-
   String name(String imageName) => _memesMap[imageName].split('-')[0].toString();
 
-  void addMemeMood(String image){
-    memeMood.add(image);
+}
+
+class ShareList {
+  static final ShareList instance = ShareList._internal();
+
+  factory ShareList() {
+    return instance;
   }
 
-  void addMemeFavorite(String image){
-    memeFavorite.add(image);
-  }
+  ShareList._internal();
+
+  final Set<String> memeMood = {};
+  final Set<String> memeFavorite = {};
 
 }

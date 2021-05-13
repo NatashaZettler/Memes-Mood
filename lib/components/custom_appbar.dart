@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:memes_mood/components/decoration.dart';
 
-PreferredSize customAppBar(BuildContext context, String title, Function() favoriteList, Function() moodList,) {
+PreferredSize customAppBar(
+  BuildContext context,
+  String title,
+  Function() favoriteList,
+  Function() moodList,
+) {
   final height = MediaQuery.of(context).size.height;
   return PreferredSize(
     preferredSize: Size.fromHeight(height),
@@ -41,7 +46,7 @@ PreferredSize customAppBar(BuildContext context, String title, Function() favori
             icon: Icon(
               Icons.emoji_emotions_outlined,
             ),
-            onPressed: () => moodList,
+            onPressed: () => moodList(),
           )
         ],
       ),

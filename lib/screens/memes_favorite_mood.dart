@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class MemesFavoriteMood extends StatelessWidget {
-  const MemesFavoriteMood({Key key}) : super(key: key);
+  final Set<String> listFavorite;
+  final Set<String> listMeme;
+
+  MemesFavoriteMood({
+    this.listFavorite,
+    this.listMeme,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,20 +31,21 @@ class MemesFavoriteMood extends StatelessWidget {
                 mainAxisSpacing: 5,
                 childAspectRatio: 1.5,
               ),
-              itemCount: 25,
+              itemCount: this.listFavorite.length,
               itemBuilder: (context, index) {
+                final String item = listFavorite.elementAt(index);
                 index++;
                 return Card(
                   child: GridTile(
                     footer: Align(
                       child: Text(
-                        '$index',
+                        '$item',
                       ),
                       alignment: Alignment.bottomRight,
                     ),
                     child: GestureDetector(
                       child: Image.asset(
-                        'assets/images/$index.png',
+                        'assets/images/$item.png',
                       ),
                       onTap: () => Navigator.of(context).pop(),
                     ),
@@ -52,22 +59,23 @@ class MemesFavoriteMood extends StatelessWidget {
                 mainAxisSpacing: 5,
                 childAspectRatio: 1.5,
               ),
-              itemCount: 25,
+              itemCount: this.listMeme.length,
               itemBuilder: (context, index) {
+                final String item = listMeme.elementAt(index);
                 index++;
                 return Card(
                   child: GridTile(
                     footer: Align(
                       child: Text(
-                        '$index',
+                        '$item',
                       ),
                       alignment: Alignment.bottomRight,
                     ),
                     child: GestureDetector(
-                        child: Image.asset(
-                          'assets/images/$index.png',
-                        ),
-                        onTap: () => Navigator.of(context).pop(),
+                      child: Image.asset(
+                        'assets/images/$index.png',
+                      ),
+                      onTap: () => Navigator.of(context).pop(),
                     ),
                   ),
                 );

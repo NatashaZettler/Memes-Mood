@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:memes_mood/components/custom_appbar.dart';
 import 'package:memes_mood/components/snackbar.dart';
-import 'package:memes_mood/model/model.dart';
+import 'package:memes_mood/model/Memes.dart';
+import 'package:memes_mood/screens/memes_favorite_mood.dart';
 
 class YourMood extends StatelessWidget with Memes {
   final String imageName;
   final String details;
+
+  final ShareList _shareList = ShareList.instance;
 
   YourMood({
     @required this.imageName,
@@ -20,8 +23,24 @@ class YourMood extends StatelessWidget with Memes {
       appBar: customAppBar(
         context,
         name(imageName),
-        () {},
-        () {},
+        () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MemesFavoriteMood(
+              listFavorite: _shareList.memeFavorite,
+              listMeme: _shareList.memeMood,
+            ),
+          ),
+        ),
+        () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MemesFavoriteMood(
+              listFavorite: _shareList.memeFavorite,
+              listMeme: _shareList.memeMood,
+            ),
+          ),
+        ),
       ),
       body: Container(
         height: height,
@@ -59,7 +78,7 @@ class YourMood extends StatelessWidget with Memes {
               ),
               ElevatedButton(
                 onPressed: () {
-                  addMemeMood('$imageName');
+                  _shareList.memeMood.add('$imageName');
                   message(context, 'Seu humor foi salvo');
                 },
                 child: Text('É assim que você se sente?'),
@@ -67,7 +86,7 @@ class YourMood extends StatelessWidget with Memes {
               Text('OU'),
               ElevatedButton(
                 onPressed: () {
-                  addMemeFavorite('$imageName');
+                  _shareList.memeFavorite.add('$imageName');
                   message(context, 'Seu meme favorito foi salvo');
                 },
                 child: Text('Você só gosta desse MEME?'),

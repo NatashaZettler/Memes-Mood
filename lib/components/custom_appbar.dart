@@ -7,7 +7,9 @@ PreferredSize customAppBar(
   Function() favoriteList,
   Function() moodList,
 ) {
+
   final height = MediaQuery.of(context).size.height;
+
   return PreferredSize(
     preferredSize: Size.fromHeight(height),
     child: Container(

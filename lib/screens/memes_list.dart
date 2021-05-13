@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memes_mood/components/custom_appbar.dart';
+import 'package:memes_mood/components/navigation.dart';
 import 'package:memes_mood/model/Memes.dart';
 import 'package:memes_mood/screens/memes_favorite_mood.dart';
 import 'package:memes_mood/screens/your_mood.dart';
@@ -8,30 +9,13 @@ class MemesList extends StatelessWidget with Memes {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final ShareList _shareList = ShareList.instance;
 
     return Scaffold(
       appBar: customAppBar(
         context,
         'Meme Mood',
-        () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MemesFavoriteMood(
-              listFavorite: _shareList.memeFavorite,
-              listMeme: _shareList.memeMood,
-            ),
-          ),
-        ),
-        () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MemesFavoriteMood(
-              listFavorite: _shareList.memeFavorite,
-              listMeme: _shareList.memeMood,
-            ),
-          ),
-        ),
+        () => callMemesFavoriteMoodList(context),
+        () => callMemesFavoriteMoodList(context),
       ),
       body: Column(
         children: [

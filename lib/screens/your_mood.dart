@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:memes_mood/components/custom_appbar.dart';
+import 'package:memes_mood/components/navigation.dart';
 import 'package:memes_mood/components/snackbar.dart';
 import 'package:memes_mood/model/Memes.dart';
-import 'package:memes_mood/screens/memes_favorite_mood.dart';
 
 class YourMood extends StatelessWidget with Memes {
   final String imageName;
   final String details;
-
   final ShareList _shareList = ShareList.instance;
 
   YourMood({
@@ -23,24 +22,8 @@ class YourMood extends StatelessWidget with Memes {
       appBar: customAppBar(
         context,
         name(imageName),
-        () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MemesFavoriteMood(
-              listFavorite: _shareList.memeFavorite,
-              listMeme: _shareList.memeMood,
-            ),
-          ),
-        ),
-        () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MemesFavoriteMood(
-              listFavorite: _shareList.memeFavorite,
-              listMeme: _shareList.memeMood,
-            ),
-          ),
-        ),
+        () => callMemesFavoriteMoodList(context),
+        () => callMemesFavoriteMoodList(context),
       ),
       body: Container(
         height: height,
@@ -97,4 +80,7 @@ class YourMood extends StatelessWidget with Memes {
       ),
     );
   }
+
+
+
 }

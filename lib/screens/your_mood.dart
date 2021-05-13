@@ -20,10 +20,10 @@ class YourMood extends StatelessWidget with Memes {
 
     return Scaffold(
       appBar: customAppBar(
-        context,
-        name(imageName),
-        () => callMemesFavoriteMoodList(context),
-        () => callMemesFavoriteMoodList(context),
+        context: context,
+        title: name(imageName),
+        favoriteList: () => callMemesFavoriteMoodList(context),
+        moodList: () => callMemesFavoriteMoodList(context),
       ),
       body: Container(
         height: height,

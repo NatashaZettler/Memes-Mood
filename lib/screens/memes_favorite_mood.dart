@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:memes_mood/components/custom_appbar.dart';
+import 'package:memes_mood/components/decoration.dart';
 import 'package:memes_mood/components/list_items_view.dart';
+import 'package:memes_mood/components/navigation.dart';
 
 class MemesFavoriteMood extends StatelessWidget {
   final Set<String> listFavorite;
@@ -15,12 +18,20 @@ class MemesFavoriteMood extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(
-          title: Text("AppBar com guias"),
+        appBar:
+        AppBar(
+          title: Padding(
+            padding: const EdgeInsets.only(left: 50,),
+            child: Text("Favorite --- Mood",),
+          ),
+          flexibleSpace: Container(
+            decoration: decoration(),
+          ),
           bottom: TabBar(
             tabs: <Widget>[
-              Text("Favorite"),
-              Text("Mood"),
+              Icon(Icons.favorite),
+              Icon(Icons.emoji_emotions_outlined),
+
             ],
           ),
         ),

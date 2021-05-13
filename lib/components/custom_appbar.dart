@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:memes_mood/components/decoration.dart';
 
-PreferredSize customAppBar(
+PreferredSize customAppBar({
   BuildContext context,
   String title,
   Function() favoriteList,
   Function() moodList,
-) {
+}) {
 
   final height = MediaQuery.of(context).size.height;
 

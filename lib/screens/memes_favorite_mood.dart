@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:memes_mood/components/custom_appbar.dart';
 import 'package:memes_mood/components/decoration.dart';
 import 'package:memes_mood/components/list_items_view.dart';
-import 'package:memes_mood/components/navigation.dart';
 
 class MemesFavoriteMood extends StatelessWidget {
   final Set<String> listFavorite;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:memes_mood/components/custom_appbar.dart';
 import 'package:memes_mood/components/navigation.dart';
 import 'package:memes_mood/components/snackbar.dart';
-import 'package:memes_mood/model/Memes.dart';
+import 'package:memes_mood/model/memes.dart';
 
 class YourMood extends StatelessWidget with Memes {
   final String imageName;

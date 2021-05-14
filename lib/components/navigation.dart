@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:memes_mood/model/Memes.dart';
+import 'package:memes_mood/model/memes.dart';
 import 'package:memes_mood/screens/memes_favorite_mood.dart';
 
 callMemesFavoriteMoodList(BuildContext context){

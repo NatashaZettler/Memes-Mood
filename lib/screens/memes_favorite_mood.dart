@@ -5,15 +5,18 @@ import 'package:memes_mood/components/list_items_view.dart';
 class MemesFavoriteMood extends StatelessWidget {
   final Set<String> listFavorite;
   final Set<String> listMeme;
+  final int tabIndex;
 
   MemesFavoriteMood({
     this.listFavorite,
     this.listMeme,
+    this.tabIndex,
   });
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+      initialIndex: this.tabIndex,
       length: 2,
       child: Scaffold(
         appBar:

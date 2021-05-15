@@ -2,7 +2,7 @@
 
 How do you feel today with memes?
 
-![ Alt text](Memes. gif) / ! [](Memes. gif)
+<img src="Memes.gif" width="250" height="500"/>
 
 ## Getting Started
 

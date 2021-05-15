@@ -59,20 +59,18 @@ class YourMood extends StatelessWidget with Memes {
               SizedBox(
                 height: height * 0.09,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  _shareList.memeMood.add('$imageName');
-                  message(context, 'Seu humor foi salvo');
-                },
-                child: Text('É assim que você se sente?'),
+              button(
+                context,
+                'Seu humor foi salvo',
+                'É assim que você se sente?',
+                _shareList.memeMood,
               ),
               Text('OU'),
-              ElevatedButton(
-                onPressed: () {
-                  _shareList.memeFavorite.add('$imageName');
-                  message(context, 'Seu meme favorito foi salvo');
-                },
-                child: Text('Você só gosta desse MEME?'),
+              button(
+                context,
+                'Seu meme favorito foi salvo',
+                'Você só gosta desse MEME?',
+                _shareList.memeFavorite,
               ),
             ],
           ),
@@ -81,6 +79,18 @@ class YourMood extends StatelessWidget with Memes {
     );
   }
 
-
-
+  button(
+    BuildContext context,
+    String textMessage,
+    String buttonName,
+    Set<String> meme,
+  ) {
+    return ElevatedButton(
+      onPressed: () {
+        meme.add('$imageName');
+        message(context, textMessage);
+      },
+      child: Text(buttonName),
+    );
+  }
 }

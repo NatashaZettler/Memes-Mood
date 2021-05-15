@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memes_mood/components/custom_appbar.dart';
+import 'package:memes_mood/components/decoration.dart';
 import 'package:memes_mood/components/navigation.dart';
 import 'package:memes_mood/model/memes.dart';
 import 'package:memes_mood/screens/your_mood.dart';
@@ -56,12 +57,7 @@ class MemesListView extends StatelessWidget {
         index++;
         return Card(
           child: GridTile(
-            footer: Align(
-              child: Text(
-                '$index',
-              ),
-              alignment: Alignment.bottomRight,
-            ),
+            footer: number(context, index),
             child: GestureDetector(
               child: Image.asset(
                 'assets/images/$index.png',
@@ -79,4 +75,24 @@ class MemesListView extends StatelessWidget {
       },
     );
   }
+}
+
+number(BuildContext context, int index) {
+  return Align(
+    alignment: Alignment.bottomRight,
+    child: Container(
+      width: MediaQuery.of(context).size.width * 0.07,
+      padding: EdgeInsets.all(2),
+      decoration: decorationWithBorder(),
+      child: Center(
+        child: Text(
+          '$index',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    ),
+  );
 }

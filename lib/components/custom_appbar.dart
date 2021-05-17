@@ -24,6 +24,7 @@ PreferredSize customAppBar({
             alignment: Alignment.topCenter,
             icon: Icon(
               Icons.arrow_back_outlined,
+              color: Colors.white,
             ),
             onPressed: () => Navigator.of(context).pop(),
           ),
@@ -40,6 +41,7 @@ PreferredSize customAppBar({
             alignment: Alignment.topRight,
             icon: Icon(
               Icons.favorite,
+              color: Colors.white,
             ),
             onPressed: () => favoriteList(),
           ),
@@ -47,6 +49,7 @@ PreferredSize customAppBar({
             alignment: Alignment.topRight,
             icon: Icon(
               Icons.emoji_emotions_outlined,
+              color: Colors.white,
             ),
             onPressed: () => moodList(),
           )

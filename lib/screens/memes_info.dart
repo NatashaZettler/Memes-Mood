@@ -42,8 +42,8 @@ class MemesInfo extends StatelessWidget {
                 ),
               ),
             ),
-          ],
-        ),
+        //   ],
+        // ),
       ),
     );
   }
